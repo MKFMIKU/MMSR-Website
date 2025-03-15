@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
 
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
@@ -24,18 +25,201 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>The Power of Context: How Multimodality Improves Image Super-Resolution</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="stylesheet" href="static/css/juxtapose.css">
+
+  <style>
+    .highlight-animated {
+      display: inline-block;
+      /* Ensures background only covers text */
+      background-color: rgba(251, 188, 5, 0.8);
+      /* Google Yellow - You can change this */
+      color: black;
+      /* Adjust text color if needed for contrast */
+      padding: 0.1em 0.2em;
+      /* Optional padding */
+      border-radius: 0.2em;
+      /* Optional rounded corners */
+      clip-path: inset(0 100% 0 0);
+      /* Initially hide the highlight from the right */
+      animation: highlight-fill 1.5s ease-in-out forwards;
+      /* Apply the animation */
+    }
+
+    @keyframes highlight-fill {
+      to {
+        clip-path: inset(0 0 0 0);
+        /* Reveal the highlight */
+      }
+    }
+
+    /* Example usage with different Google colors */
+    .highlight-animated.blue {
+      background-color: rgba(66, 133, 244, 0.8);
+      /* Google Blue */
+    }
+
+    .highlight-animated.red {
+      background-color: rgba(234, 67, 53, 0.8);
+      /* Google Red */
+    }
+
+    .highlight-animated.green {
+      background-color: rgba(52, 168, 83, 0.8);
+      /* Google Green */
+    }
+
+    .jx-slider {
+      margin-top: 1em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+
+    caption {
+      text-align: center;
+      padding: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      vertical-align: middle;
+      /* For better alignment of images and text */
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    tr:first-child th {
+      border-top: 2px solid black;
+      border-bottom: 1px solid black;
+    }
+
+    tr:last-child td {
+      border-bottom: 2px solid black;
+    }
+
+    td:first-child {
+      width: 4cm;
+      text-align: center;
+    }
+
+    td:nth-child(2) {
+      width: 5cm;
+    }
+
+    td:nth-child(3) {
+      width: 6cm;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      /* To remove extra space below image */
+    }
+
+    .arraystretch {
+      line-height: 2.4;
+      /* Equivalent to \renewcommand\arraystretch{1.4} - adjust as needed */
+    }
+
+    .short-evocative {
+      font-weight: bold;
+    }
+
+    .descriptive {
+      font-weight: normal;
+    }
+
+    .light-focus {
+      font-weight: normal;
+    }
+
+    tbody tr td {
+      border-bottom: 1px solid #ccc;
+      /* Add a light gray bottom border to each data cell */
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+      /* Remove the bottom border from the last row's cells */
+    }
+
+    .results-caption-container {
+      width: 8vw;
+      /* Approximate width from \xwidth */
+      word-wrap: break-word;
+      text-align: left;
+      font-size: 0.8em;
+      /* Approximate \scriptsize */
+    }
+
+    .results-zoomed {
+      font-size: 0.8em;
+      /* Approximate \scriptsize */
+    }
+
+    .results-lr-patch {
+      width: 14vw;
+      /* Approximate width from \xwidth */
+      height: auto;
+      object-fit: contain;
+      /* To handle potential aspect ratio differences after trim */
+    }
+
+    .results-output-image {
+      width: 14vw;
+      /* Approximate width from \xwidth */
+      height: auto;
+      object-fit: contain;
+      /* To handle potential aspect ratio differences after trim */
+    }
+
+    .results-small-text {
+      font-size: 0.8em;
+      /* Approximate \scriptsize */
+    }
+
+    .realtable td:nth-child(3) {
+      width: 2cm;
+    }
+    .realtable td:nth-child(2) {
+      width: 2cm;
+    }
+
+    .zoomed-image {
+  transform: scale(2.5); /* Increase size on hover */
+  cursor: zoom-in; /* Change cursor on hover */
+  z-index: 99999;
+  position: relative; /* Add this line */
+    }
+.row-dimmed {
+  opacity: 0.6; /* Make other cells slightly transparent */
+  /* Alternatively, you can use a background color: */
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  /* z-index: -1; */
+}
+  </style>
+  </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -43,7 +227,17 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
 </head>
+
 <body>
 
 
@@ -52,50 +246,80 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">The Power of Context: How Multimodality Improves Image
+              Super-Resolution</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                <a href="https://kfmei.com/" target="_blank">Kangfu Mei</a> <sup class="font-size: tiny">1, 2</sup>
+                ,</span>
+              <span class="author-block">
+                <a href="https://research.google/people/105490/" target="_blank">Hossein Talebi</a> <sup>1</sup>
+                ,</span>
+              <span class="author-block">
+                Mojtaba Ardakani <sup>1</sup>
+              </span>,</span>
+              <span class="author-block">
+                <a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/" target="_blank">Vishal M. Patel</a>
+                <sup>2</sup>
+              </span>,</span>
+              <br>
+              <span class="author-block">
+                <a href="https://sites.google.com/corp/view/milanfarhome/" target="_blank">Peyman Milanfar</a>
+                <sup>1</sup>
+              </span>,</span>
+              <span class="author-block">
+                <a href="https://mdelbra.github.io/" target="_blank">Mauricio Delbracio</a> <sup>1</sup>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Google AI Innovation + Research <sup>1</sup></span> <span class="author-block">
+                Johns Hopkins University <sup>2</sup> </span>
+              <br><i>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025</i></span>
+              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-5 publication-authors"
+              style="display: flex; justify-content: center; align-items: center;">
+              <span class="author-block">
+                <img src="static/images/JHU.logo_horizontal.blue.png" alt="JHU logo" style="max-height: 72px;" />
+              </span>
+              <span class="author-block">
+                <img src="static/images/lockup_GoogleResearch_FullColor_rgb_3568x512px_clr_2x.png"
+                  alt="Google Research logo" style="max-height: 36px;" />
+              </span>
+              <span class="author-block" style="padding-left: 2rem;">
+                <img src="static/images/CVPR25logo.png" alt="CVPR 2025 logo" style="max-height: 48px;" />
+              </span>
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
                     </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+                <!-- Supplementary PDF link -->
+                <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -107,160 +331,396 @@
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We propose a novel approach that leverages the rich contextual information available in multiple
+              modalities --including <span class="highlight-animated blue">depth</span>, <span
+                class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
+              and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
+              for SISR within a diffusion model framework.
+              We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
+              an arbitrary number of input modalities without requiring significant modifications to the diffusion
+              process.
+              Crucially, we mitigate hallucinations, often introduced by text prompts, by using spatial information from
+              other modalities to guide regional text-based conditioning.
+              Each modality's guidance strength can also be controlled independently, allowing steering outputs toward
+              different directions, such as increasing bokeh through depth or adjusting object prominence via
+              segmentation.
+              Extensive experiments demonstrate that our model surpasses state-of-the-art generative SISR methods,
+              achieving superior visual quality and fidelity.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End youtube video -->
+  </section>
+  <!-- End paper abstract -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <div class="juxtapose" id="com_00020"></div>
+          </div>
+          <div class="item">
+            <div class="juxtapose" id="com_00089"></div>
+          </div>
+          <div class="item">
+            <div class="juxtapose" id="com_00033"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End video carousel -->
+  </section>
+  <!-- End image carousel -->
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <!-- Paper video. -->
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Method</h2>
+            <p>Starting with a low-resolution (LR) image, we extract modalities like depth and semantic segmentation
+              maps. These modalities are encoded into tokens and transformed into multimodal latent tokens ($m$). Our
+              diffusion model uses these tokens and the LR input to generate a high-resolution (SR) output. A multimodal
+              classifier-free guidance <i>m-cfg</i> refines the SR image for enhanced quality.</p>
+            <img src="static/images/animated-ibis-architecture-sr-new.svg" style="max-width: 90%;" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Real-world Multimodal SR Results Comparisons</h2>
+
+            <table style="border-collapse: collapse; width: 100%;" class="realtable">
+              <thead>
+                <tr>
+                  <th colspan="3" class="results-tabfirst"><small>Inputs</small></th>
+                  <th></th>
+                  <th colspan="4" class="results-tabsecond"><small>Outputs</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="results-tabfirst"><img
+                      src="figures/realsr/ACAT_XXXX_20230506_203944_098_output_metadata_lr_mark.png"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabfirst">
+                    <div class="results-caption-container">Two people walk along a narrow path carved into the
+                      reddish-orange sandstone cliffs. A small evergreen tree grows in the foreground near the base of
+                      the cliff \dots</div>
+                  </td>
+                  <td class="results-tabfirst"><img
+                      src="figures/realsr/ACAT_XXXX_20230506_203944_098_output_metadata_lr.png" style="width: 4vw;">
+                  </td>
+                  <td></td>
+                  <td class="results-tabsecond"><img
+                      src="figures/realsr/ACAT_XXXX_20230506_203944_098_output_metadata_pasd.jpg" style="width: 14vw;">
+                  </td>
+                  <td class="results-tabsecond"><img
+                      src="figures/realsr/ACAT_XXXX_20230506_203944_098_output_metadata_seesr.jpg" style="width: 14vw;">
+                  </td>
+                  <td class="results-tabsecond"><img
+                      src="figures/realsr/ACAT_XXXX_20230506_203944_098_output_metadata_supir.jpg" style="width: 14vw;">
+                  </td>
+                  <td class="results-tabsecond"><img
+                      src="figures/realsr/ACAT_XXXX_20230506_203944_098_output_metadata_ours.png" style="width: 14vw;">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><small>LR</small></td>
+                  <td class="results-tabfirst"><small>Caption</small></td>
+                  <td class="results-tabfirst"><small>Patch 1</small></td>
+                  <td></td>
+                  <td class="results-tabsecond"><small>PASD (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SeeSR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SUPIR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>MMSR (Zoomed)</small></td>
+                </tr>
+                
+                <tr>
+                  <td colspan="8"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_3210521736_8c37e15ebd_o_lr_mark.png"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabfirst">
+                    <div class="results-caption-container">Photo of a mining town nestled on a hillside, autumnal
+                      colors. The buildings are predominantly low-slung structures with metal roofs, some \dots</div>
+                  </td>
+                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_3210521736_8c37e15ebd_o_lr.png"
+                      style="width: 4vw;"></td>
+                  <td></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_3210521736_8c37e15ebd_o_pasd.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_3210521736_8c37e15ebd_o_seesr.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_3210521736_8c37e15ebd_o_0_supir.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_3210521736_8c37e15ebd_o_ours.jpg"
+                      style="width: 14vw;"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><small>LR</small></td>
+                  <td class="results-tabfirst"><small>Caption</small></td>
+                  <td class="results-tabfirst"><small>Patch 1</small></td>
+                  <td></td>
+                  <td class="results-tabsecond"><small>PASD (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SeeSR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SUPIR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>MMSR (Zoomed)</small></td>
+                </tr>
+                <tr>
+                  <td colspan="8"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><img
+                      src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_lr_mark.png" style="width: 14vw;"></td>
+                  <td class="results-tabfirst">
+                    <div class="results-caption-container">Photo of a weathered exterior wall detail, grunge, aged. A
+                      rusty metal lamp is mounted on a dark vertical beam against a crumbling ochre and brown stucco
+                      wall \dots</div>
+                  </td>
+                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_lr.png"
+                      style="width: 4vw;"></td>
+                  <td></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_pasd.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_seesr.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img
+                      src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_0_supir.jpg" style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_ours.jpg"
+                      style="width: 14vw;"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><small>LR</small></td>
+                  <td class="results-tabfirst"><small>Caption</small></td>
+                  <td class="results-tabfirst"><small>Patch 1</small></td>
+                  <td></td>
+                  <td class="results-tabsecond"><small>PASD (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SeeSR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SUPIR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>MMSR (Zoomed)</small></td>
+                </tr>
+                <tr>
+                  <td colspan="8"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_lr_mark.png"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabfirst">
+                    <div class="results-caption-container">Photo of a window with a sign, brick wall. A simple white
+                      rectangular sign with black text reading "I SUPPORT WIKILEAKS" is taped \dots</div>
+                  </td>
+                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_lr.png"
+                      style="width: 4vw;"></td>
+                  <td></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_pasd.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_seesr.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_0_supir.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_ours.jpg"
+                      style="width: 14vw;"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><small>LR</small></td>
+                  <td class="results-tabfirst"><small>Caption</small></td>
+                  <td class="results-tabfirst"><small>Patch 1</small></td>
+                  <td></td>
+                  <td class="results-tabsecond"><small>PASD (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SeeSR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SUPIR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>MMSR (Zoomed)</small></td>
+                </tr>
+                <tr>
+                  <td colspan="8"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_9202323464_dd3e522910_o_center_lr_mark.png"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabfirst">
+                    <div class="results-caption-container">Photo of a high-detail stone sculpture, sepia toned. The
+                      sculpture depicts Jesus Christ seated, his hands raised in a gesture of blessing \dots</div>
+                  </td>
+                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_9202323464_dd3e522910_o_center_lr.png"
+                      style="width: 4vw;"></td>
+                  <td></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_9202323464_dd3e522910_o_center_pasd.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_9202323464_dd3e522910_o_center_seesr.jpg"
+                      style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img
+                      src="figures/realsr/EVAL_9202323464_dd3e522910_o_center_0_supir.jpg" style="width: 14vw;"></td>
+                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_9202323464_dd3e522910_o_center_ours.jpg"
+                      style="width: 14vw;"></td>
+                </tr>
+                <tr>
+                  <td class="results-tabfirst"><small>LR</small></td>
+                  <td class="results-tabfirst"><small>Caption</small></td>
+                  <td class="results-tabfirst"><small>Patch 1</small></td>
+                  <td></td>
+                  <td class="results-tabsecond"><small>PASD (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SeeSR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>SUPIR (Zoomed)</small></td>
+                  <td class="results-tabsecond"><small>MMSR (Zoomed)</small></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Youtube video -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">LR Image Captioning Prompt Engineering</h2>
+            <p>Image caption result comparisons between different prompts. We show that our prompt that utilizes
+              in-context learning is stable at most cases and can always get more detailed image captions without
+              useless procedural words.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Prompt</th>
+                  <th><em>Describe this image and its style in a very detailed manner</em></th>
+                  <th>
+                    <em class="prompt-text">
+                      Write a four sentence caption in English for this image. In the first sentence describe the style
+                      and type (painting, photo, etc) of the image. Describe in the remaining sentences the contents and
+                      composition of the image. Only use language that would be used to prompt a text to image model. Do
+                      not include usage. Comma separate keywords rather than using "or". Precise composition is
+                      important. Avoid phrases like "Here is...". Good examples are: "Photo of an alien woman with a
+                      glowing halo standing on top of a mountain, wearing a white robe and silver mask in the futuristic
+                      style with futuristic design, sky background, soft lighting, dynamic pose, a sense of future
+                      technology, a science fiction movie scene rendered in the Unreal Engine."
+                    </em>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="arraystretch">
+                <tr>
+                  <td><img src="results/captions/ACAT100_XXXX_20230503_041006_951_input_center.jpg" alt="Image 1"></td>
+                  <td>
+                    **Option 1 (Short & Evocative):** Textures of twilight.<br>
+                    **Option 2 (Descriptive):** Smooth, windswept curves of snow and
+                    shadow paint an abstract landscape in dusky hues.<br>
+                    **Option 3 (Focusing on Light):** The fading light reveals the
+                    delicate textures etched onto the snowy slopes...
+                  </td>
+                  <td>Photo of a mountainous landscape, abstract, textured.&nbsp; The image features sweeping curves of
+                    snow and ice, creating a dramatic diagonal composition.&nbsp; Shades of purple and blue dominate the
+                    color palette, lending a cool and ethereal atmosphere. The texture is highly detailed, showing the
+                    granular nature of the snow and the sculpted forms of the terrain.</td>
+                </tr>
+                <tr>
+                  <td><img src="results/captions/ACAT100_XXXX_20230531_081717_577_input_center.jpg" alt="Image 2"></td>
+                  <td>a close-up view of a car's hood, reflecting a sunlit scene. The hood is slightly wet, indicated by
+                    the subtle sheen of water droplets that catch and scatter the light. The reflection is not sharp or
+                    complete, but rather a shimmering impression of the surrounding environment...</td>
+                  <td>Photorealistic image,&nbsp; exterior shot, modern architecture.&nbsp; A sleek dark gray apartment
+                    building with balconies is partially visible through lush green foliage.&nbsp; The foreground
+                    features a wet car hood reflecting sunlight.&nbsp; The composition emphasizes a shallow depth of
+                    field, focusing on the reflection and blurring the background.</td>
+                </tr>
+                <tr>
+                  <td><img src="results/captions/ACAT_XXXX_20230506_203944_098_output_metadata.jpg" alt="Image 3"></td>
+                  <td>Here's a detailed description of the image and its style: The image is a landscape photograph,
+                    seemingly taken in a canyon or arid desert region, focusing on two hikers traversing a rocky path.
+                    Composition and Subject Matter: ...</td>
+                  <td>Photo of hikers in a canyon, Bryce Canyon National Park. Two people walk along a narrow path
+                    carved into the reddish-orange sandstone cliffs. A small evergreen tree grows in the foreground near
+                    the base of the cliff. The composition is a high-angle view, showcasing the scale of the canyon
+                    walls and the small figures of the hikers.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End youtube video -->
+
+
+  <!-- Video carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Another Carousel</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <source src="static/videos/carousel3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End video carousel -->
 
 
 
 
 
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,43 +730,129 @@
         
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+  </section> -->
+  <!--End paper poster -->
 
 
-<!--BibTex citation -->
+  <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+@inproceedings{mei2025mmsr,
+  title={The Power of Context: How Multimodality Improves Image Super-Resolution},
+  author={Mei, Kangfu and Talebi, Hossein and Ardakani, Mojtaba and Patel, Vishal M and Milanfar, Peyman and Delbracio, Mauricio},
+  year={2025},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+}
+   </code></pre>
     </div>
-</section>
-<!--End BibTex citation -->
+  </section>
+  <!--End BibTex citation -->
 
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
 
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <script type="text/javascript" src="static/js/juxtapose.js"></script>
+  <script>
 
-    <!-- End of Statcounter Code -->
+    new juxtapose.JXSlider('#com_00033', [{
+      src: './results/000033_lr.jpg',
+      label: 'LR Input',
+    }, {
+      src: './results/000033_ours.jpg',
+      label: 'MMSR\'s Result',
+    }], {
+      animate: true,
+      showLabels: true,
+      showCredits: true,
+      startingPosition: "25%",
+      makeResponsive: true
+    });
+    new juxtapose.JXSlider('#com_00089', [{
+      src: './results/000089_lr.jpg',
+      label: 'LR Input',
+    }, {
+      src: './results/000089_ours.jpg',
+      label: 'MMSR\'s Result',
+    }], {
+      animate: true,
+      showLabels: true,
+      showCredits: true,
+      startingPosition: "25%",
+      makeResponsive: true
+    });
 
-  </body>
-  </html>
+    new juxtapose.JXSlider('#com_00020', [{
+      src: './results/000020_lr.jpg',
+      label: 'LR Input',
+    }, {
+      src: './results/000020_ours.jpg',
+      label: 'MMSR\'s Result',
+    }], {
+      animate: true,
+      showLabels: true,
+      showCredits: true,
+      startingPosition: "25%",
+      makeResponsive: true
+    });
+
+    const table = document.querySelector('table');
+  const images = table.querySelectorAll('img');
+
+
+  images.forEach(img => {
+    img.addEventListener('mouseover', function() {
+      this.classList.add('zoomed-image');
+      const row = this.closest('tr');
+      if (row) {
+        const cells = row.querySelectorAll('td');
+        cells.forEach(cell => {
+          if (!cell.contains(this)) {
+            cell.classList.add('row-dimmed');
+          }
+        });
+      }
+    });
+
+    img.addEventListener('mouseout', function() {
+      this.classList.remove('zoomed-image');
+      const row = this.closest('tr');
+      if (row) {
+        const cells = row.querySelectorAll('td');
+        cells.forEach(cell => {
+          cell.classList.remove('row-dimmed');
+        });
+      }
+    });
+  });
+  </script>
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
