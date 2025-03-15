@@ -346,52 +346,64 @@
     </div>
   </section>
 
-
-  <!-- Paper abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              We propose a novel approach that leverages the rich contextual information available in multiple
-              modalities --including <span class="highlight-animated blue">depth</span>, <span
-                class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
-              and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
-              for SISR within a diffusion model framework.
-              We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
-              an arbitrary number of input modalities without requiring significant modifications to the diffusion
-              process.
-              Crucially, we mitigate hallucinations, often introduced by text prompts, by using spatial information from
-              other modalities to guide regional text-based conditioning.
-              Each modality's guidance strength can also be controlled independently, allowing steering outputs toward
-              different directions, such as increasing bokeh through depth or adjusting object prominence via
-              segmentation.
-              Extensive experiments demonstrate that our model surpasses state-of-the-art generative SISR methods,
-              achieving superior visual quality and fidelity.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End paper abstract -->
-
-
   <!-- Image carousel -->
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
-            <div class="juxtapose" id="com_00020"></div>
-          </div>
-          <div class="item">
             <div class="juxtapose" id="com_00089"></div>
+            <div class="multimodalinput">
+              <div class="textinput">
+                <p>Photo of a stained-glass ceiling, circular composition.  The ceiling features a radiating pattern of yellow, white, and gray stained glass panels.  Dark brown central element acts as a focal point.  The style is Art Nouveau, detailed lines, and intricate design.</p>
+              </div>
+              <div class="depinput">
+                <img src="results/000089_dep.png" alt="">
+              </div>
+              <div class="edginput">
+                <img src="results/000089_edg.png" alt="">
+              </div>
+              <div class="seginput">
+                <img src="results/000089_seg.png" alt="">
+              </div>
+            </div>
           </div>
+  
+          <div class="item">
+            <div class="juxtapose" id="com_00020"></div>
+            <div class="multimodalinput">
+              <div class="textinput">
+                <p>Photo of a stained-glass ceiling, circular composition.  The ceiling features a radiating pattern of yellow, white, and gray stained glass panels.  Dark brown central element acts as a focal point.  The style is Art Nouveau, detailed lines, and intricate design.</p>
+              </div>
+              <div class="depinput">
+                <img src="results/000020_dep.png" alt="">
+              </div>
+              <div class="edginput">
+                <img src="results/000020_edg.png" alt="">
+              </div>
+              <div class="seginput">
+                <img src="results/000020_seg.png" alt="">
+              </div>
+            </div>
+          </div>
+    
           <div class="item">
             <div class="juxtapose" id="com_00033"></div>
+            <div class="multimodalinput">
+              <div class="textinput">
+                <p>Photo of a large wooden building with a steeply pitched roof, multiple levels, and numerous balconies adorned with hanging flowers. The building is constructed primarily of light brown wood with a stone base, exhibiting traditional Romanian architecture.  People are visible near the bottom of the building, providing a sense of scale. The photo is taken from a low angle, showcasing the full height and grandeur of the structure against a clear sky.</p>
+              </div>
+              <div class="depinput">
+                <img src="results/000033_dep.png" alt="">
+              </div>
+              <div class="edginput">
+                <img src="results/000033_edg.png" alt="">
+              </div>
+              <div class="seginput">
+                <img src="results/000033_seg.png" alt="">
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -399,7 +411,11 @@
   </section>
   <!-- End image carousel -->
 
-  <section class="hero is-small is-light">
+
+
+
+
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <!-- Paper video. -->
@@ -418,7 +434,7 @@
     </div>
   </section>
 
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
         <!-- Paper video. -->
@@ -612,7 +628,7 @@
   </section>
 
   <!-- Youtube video -->
-  <section class="hero is-small is-light">
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <!-- Paper video. -->
@@ -686,6 +702,36 @@
   </section>
   <!-- End youtube video -->
 
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                We propose a novel approach that leverages the rich contextual information available in multiple
+                modalities --including <span class="highlight-animated blue">depth</span>, <span
+                  class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
+                and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
+                for SISR within a diffusion model framework.
+                We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
+                an arbitrary number of input modalities without requiring significant modifications to the diffusion
+                process.
+                Crucially, we mitigate hallucinations, often introduced by text prompts, by using spatial information from
+                other modalities to guide regional text-based conditioning.
+                Each modality's guidance strength can also be controlled independently, allowing steering outputs toward
+                different directions, such as increasing bokeh through depth or adjusting object prominence via
+                segmentation.
+                Extensive experiments demonstrate that our model surpasses state-of-the-art generative SISR methods,
+                achieving superior visual quality and fidelity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
 
   <!-- Video carousel -->
   <!-- <section class="hero is-small">
