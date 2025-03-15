@@ -202,22 +202,189 @@
     .realtable td:nth-child(3) {
       width: 2cm;
     }
+
     .realtable td:nth-child(2) {
       width: 2cm;
     }
 
     .zoomed-image {
-  transform: scale(2.5); /* Increase size on hover */
-  cursor: zoom-in; /* Change cursor on hover */
-  z-index: 99999;
-  position: relative; /* Add this line */
+      transform: scale(2.5);
+      /* Increase size on hover */
+      cursor: zoom-in;
+      /* Change cursor on hover */
+      z-index: 99999;
+      position: relative;
+      /* Add this line */
     }
-.row-dimmed {
-  opacity: 0.6; /* Make other cells slightly transparent */
-  /* Alternatively, you can use a background color: */
-  /* background-color: rgba(0, 0, 0, 0.1); */
-  /* z-index: -1; */
-}
+
+    .row-dimmed {
+      opacity: 0.6;
+      /* Make other cells slightly transparent */
+      /* Alternatively, you can use a background color: */
+      /* background-color: rgba(0, 0, 0, 0.1); */
+      /* z-index: -1; */
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      /* Stack rows vertically */
+    }
+
+    .multimodaloutput-input-row {
+      display: flex;
+      /* Arrange output and input in a row */
+      align-items: stretch;
+      /* Make items the same height */
+    }
+
+    .multimodaloutput {
+      width: 86%;
+    }
+
+    .multimodalinput {
+      width: 14%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      /* Align depinput, edginput, seginput vertically */
+      justify-content: space-between;
+      /* Distribute space between the input divs */
+    }
+
+
+    .textinput {
+      width: 100%;
+      margin-top: 10px;
+      /* Add some spacing between the rows if needed */
+    }
+
+    .textinput p {
+      font-size: 10pt;
+      font-style: italic;
+    }
+
+    /* Optional styling for the content within the divs */
+    .multimodaloutput .juxtapose {
+      width: 100%;
+      height: auto;
+      /* Adjust as needed */
+      border: 1px solid #ccc;
+      /* Example border */
+    }
+
+    .multimodalinput {
+      text-align: center;
+      font-size: 10pt;
+      padding: 1rem;
+    }
+     
+
+    .multimodalinput img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+  
+    .depinput,
+    .edginput,
+    .seginput {
+      height: 30%;
+      display: block;
+    }
+
+    .textinput>span {
+      font-size: 12pt;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .textinput p {
+      margin: 0;
+      /* Remove default paragraph margins */
+    }
+
+    .quan-container {
+    display: flex;
+    width: 100%;
+    height: auto; /* Adjust as needed */
+  }
+
+  .quan-table-wrapper-1 {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .quan-table-wrapper-2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .quan-table-wrapper-2-top {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+  }
+
+  .quan-table-wrapper-2-bottom {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+  }
+
+  .quan-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: small;
+    margin-top: -1rem;
+  }
+
+  .quan-table th, .quan-table td {
+    border: 1px solid #ddd;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .quan-table th:first-child, .quan-table td:first-child {
+    text-align: left;
+  }
+
+  .quan-table thead th {
+    background-color: #f0f0f0;
+  }
+
+  .quan-table tr:nth-child(even) {
+    /* Add striped effect if desired */
+  }
+
+  .quan-lightgray2 {
+    background-color: #d3d3d3; /* Light gray color */
+  }
+
+  .quan-best {
+    color: red;
+    font-weight: bold;
+  }
+
+  .quan-second-best {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  .quan-italic {
+    font-style: italic;
+  }
+
+  .quan-clip-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   </style>
   </style>
 
@@ -297,7 +464,7 @@
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                  <a href="https://drive.google.com/file/d/1hKS2HgL5NEcqurXoXDpyarKRnjTDtmRo/view" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -307,7 +474,7 @@
                 </span>
 
                 <!-- Supplementary PDF link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -315,10 +482,10 @@
                     </span>
                     <span>Supplementary</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- Github link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://github.com/YOUR REPO HERE" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -326,16 +493,16 @@
                     </span>
                     <span>Code</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="#" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv</span>
+                    <span>arXiv (TBD)</span>
                   </a>
                 </span>
               </div>
@@ -352,55 +519,104 @@
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
-            <div class="juxtapose" id="com_00089"></div>
-            <div class="multimodalinput">
-              <div class="textinput">
-                <p>Photo of a stained-glass ceiling, circular composition.  The ceiling features a radiating pattern of yellow, white, and gray stained glass panels.  Dark brown central element acts as a focal point.  The style is Art Nouveau, detailed lines, and intricate design.</p>
+            <div class="multimodaloutput-input-row">
+              <div class="multimodaloutput">
+                <div class="juxtapose" id="com_00089"></div>
               </div>
-              <div class="depinput">
-                <img src="results/000089_dep.png" alt="">
+              <div class="multimodalinput">
+                MMSR's Depth Input
+                <div class="depinput">
+                  
+                  <img src="results/000089_dep.png" alt="">
+                </div>
+                MMSR's Edge Input
+                <div class="edginput">
+                  
+                  <img src="results/000089_edg.png" alt="">
+                </div>
+                MMSR's Seg Input
+                <div class="seginput">
+                  
+                  <img src="results/000089_seg.png" alt="">
+                </div>
               </div>
-              <div class="edginput">
-                <img src="results/000089_edg.png" alt="">
-              </div>
-              <div class="seginput">
-                <img src="results/000089_seg.png" alt="">
+            </div>
+            <div class="textinput">
+              <span>MMSR's Prompt Input</span>
+              <div style="display: flex; align-items: center; height: 100%;">
+                <p>Photo of a stained-glass ceiling, circular composition. The ceiling features a radiating pattern of
+                  yellow, white, and gray stained glass panels. Dark brown central element acts as a focal point. The
+                  style is Art Nouveau, detailed lines, and intricate design.</p>
               </div>
             </div>
           </div>
-  
+
           <div class="item">
-            <div class="juxtapose" id="com_00020"></div>
-            <div class="multimodalinput">
-              <div class="textinput">
-                <p>Photo of a stained-glass ceiling, circular composition.  The ceiling features a radiating pattern of yellow, white, and gray stained glass panels.  Dark brown central element acts as a focal point.  The style is Art Nouveau, detailed lines, and intricate design.</p>
+            <div class="multimodaloutput-input-row">
+              <div class="multimodaloutput">
+                <div class="juxtapose" id="com_00020"></div>
               </div>
-              <div class="depinput">
-                <img src="results/000020_dep.png" alt="">
+              <div class="multimodalinput">
+                MMSR's Depth Input
+                <div class="depinput">
+                  
+                  <img src="results/000020_dep.png" alt="">
+                </div>
+                MMSR's Edge Input
+                <div class="edginput">
+                  
+                  <img src="results/000020_edg.png" alt="">
+                </div>
+                MMSR's Seg Input
+                <div class="seginput">
+                  
+                  <img src="results/000020_seg.png" alt="">
+                </div>
               </div>
-              <div class="edginput">
-                <img src="results/000020_edg.png" alt="">
-              </div>
-              <div class="seginput">
-                <img src="results/000020_seg.png" alt="">
+            </div>
+            <div class="textinput">
+              <span>MMSR's Prompt Input</span>
+              <div style="display: flex; align-items: center; height: 100%;">
+                <p>Photo of a stained-glass ceiling, circular composition. The ceiling features a radiating pattern of
+                  yellow, white, and gray stained glass panels. Dark brown central element acts as a focal point. The
+                  style is Art Nouveau, detailed lines, and intricate design.</p>
               </div>
             </div>
           </div>
-    
+
           <div class="item">
-            <div class="juxtapose" id="com_00033"></div>
-            <div class="multimodalinput">
-              <div class="textinput">
-                <p>Photo of a large wooden building with a steeply pitched roof, multiple levels, and numerous balconies adorned with hanging flowers. The building is constructed primarily of light brown wood with a stone base, exhibiting traditional Romanian architecture.  People are visible near the bottom of the building, providing a sense of scale. The photo is taken from a low angle, showcasing the full height and grandeur of the structure against a clear sky.</p>
+            <div class="multimodaloutput-input-row">
+              <div class="multimodaloutput">
+                <div class="juxtapose" id="com_00033"></div>
               </div>
-              <div class="depinput">
-                <img src="results/000033_dep.png" alt="">
+              <div class="multimodalinput">
+                MMSR's Depth Input
+                <div class="depinput">
+                  
+                  <img src="results/000033_dep.png" alt="">
+                </div>
+                MMSR's Edge Input
+                <div class="edginput">
+                  
+                  <img src="results/000033_edg.png" alt="">
+                </div>
+                MMSR's Seg Input
+                <div class="seginput">
+                  
+                  <img src="results/000033_seg.png" alt="">
+                </div>
               </div>
-              <div class="edginput">
-                <img src="results/000033_edg.png" alt="">
-              </div>
-              <div class="seginput">
-                <img src="results/000033_seg.png" alt="">
+            </div>
+            <div class="textinput">
+              <span>MMSR's Prompt Input</span>
+              <div style="display: flex; align-items: center; height: 100%;">
+                <p>Photo of a large wooden building with a steeply pitched roof, multiple levels, and numerous balconies
+                  adorned with hanging flowers. The building is constructed primarily of light brown wood with a stone
+                  base, exhibiting traditional Romanian architecture. People are visible near the bottom of the
+                  building,
+                  providing a sense of scale. The photo is taken from a low angle, showcasing the full height and
+                  grandeur
+                  of the structure against a clear sky.</p>
               </div>
             </div>
 
@@ -417,11 +633,19 @@
 
   <section class="hero is-small">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-four-fifths">
         <!-- Paper video. -->
 
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
+        <div class="columns">
+          <div class="column">
+            <h2 class="title is-3">Motivation</h2>
+            <p>
+              Language models struggle to accurately represent spatial information, leading to coarse and imprecise image super-resolution. To overcome this limitation, we incorporate additional spatial modalities like depth maps and semantic segmentation maps. These modalities provide detailed spatial context, allowing our model to implicitly align language descriptions with individual pixels through a transformer network. This enriched understanding of the image significantly enhances the realism of our super-resolution results and minimizes distortion.
+            </p>
+            <div style="width: 100%; text-align: center;">
+              <img src="static/images/idea.png" style="padding-left: 10vw; padding-right: 10vw;" alt="">
+            </div>
+
             <h2 class="title is-3">Method</h2>
             <p>Starting with a low-resolution (LR) image, we extract modalities like depth and semantic segmentation
               maps. These modalities are encoded into tokens and transformed into multimodal latent tokens ($m$). Our
@@ -487,7 +711,7 @@
                   <td class="results-tabsecond"><small>SUPIR (Zoomed)</small></td>
                   <td class="results-tabsecond"><small>MMSR (Zoomed)</small></td>
                 </tr>
-                
+
                 <tr>
                   <td colspan="8"></td>
                 </tr>
@@ -634,6 +858,361 @@
         <!-- Paper video. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
+            <h2 class="title is-3">Quantitative Performance</h2>
+            Quantitative comparison with state-of-the-art methods on common benchmarks.
+            <br>
+            <br>
+            <div class="quan-container">
+              <div class="quan-table-wrapper-1">
+                <table class="quan-table">
+                  <thead>
+                    <tr>
+                      <th colspan="9" style="text-align:left"><span class="quan-italic">DIV2K-Val-3k</span> 512 × 512</th>
+                    </tr>
+                    <tr>
+                      <th>Methods</th>
+                      <th>PSNR</th>
+                      <th>SSIM</th>
+                      <th>LPIPS ↓</th>
+                      <th>DISTS ↓</th>
+                      <th>NIQE ↓</th>
+                      <th>FID ↓</th>
+                      <th>MUSIQ</th>
+                      <th>CLIPIQA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>BSRGAN</td>
+                      <td class="quan-second-best">21.87</td>
+                      <td>0.5539</td>
+                      <td>0.4136</td>
+                      <td>0.2737</td>
+                      <td>4.7615</td>
+                      <td>64.28</td>
+                      <td>59.11</td>
+                      <td>0.5183</td>
+                    </tr>
+                    <tr>
+                      <td>R-ESRGAN</td>
+                      <td class="quan-best">21.94</td>
+                      <td class="quan-best">0.5736</td>
+                      <td>0.3868</td>
+                      <td>0.2601</td>
+                      <td>4.9209</td>
+                      <td>53.46</td>
+                      <td>58.64</td>
+                      <td>0.5424</td>
+                    </tr>
+                    <tr>
+                      <td>LDL</td>
+                      <td>21.52</td>
+                      <td>0.5690</td>
+                      <td>0.3995</td>
+                      <td>0.2688</td>
+                      <td>5.0249</td>
+                      <td>58.94</td>
+                      <td>57.90</td>
+                      <td>0.5313</td>
+                    </tr>
+                    <tr>
+                      <td>DASR</td>
+                      <td>21.72</td>
+                      <td>0.5536</td>
+                      <td>0.4266</td>
+                      <td>0.2688</td>
+                      <td>4.8596</td>
+                      <td>67.22</td>
+                      <td>54.22</td>
+                      <td>0.5241</td>
+                    </tr>
+                    <tr>
+                      <td>FeMASR</td>
+                      <td>20.85</td>
+                      <td>0.5163</td>
+                      <td>0.3973</td>
+                      <td>0.2428</td>
+                      <td><span class="quan-second-best">4.5726</span></td>
+                      <td>53.70</td>
+                      <td>58.10</td>
+                      <td>0.5597</td>
+                    </tr>
+                    <tr>
+                      <td>LDM</td>
+                      <td>21.26</td>
+                      <td>0.5239</td>
+                      <td>0.4154</td>
+                      <td>0.2500</td>
+                      <td>6.4667</td>
+                      <td>41.93</td>
+                      <td>56.52</td>
+                      <td>0.5695</td>
+                    </tr>
+                    <tr>
+                      <td>StableSR</td>
+                      <td>20.84</td>
+                      <td>0.4887</td>
+                      <td>0.4055</td>
+                      <td>0.2542</td>
+                      <td>4.6551</td>
+                      <td>36.57</td>
+                      <td>62.95</td>
+                      <td>0.6486</td>
+                    </tr>
+                    <tr>
+                      <td>ResShift</td>
+                      <td>21.75</td>
+                      <td>0.5422</td>
+                      <td>0.4284</td>
+                      <td>0.2606</td>
+                      <td>6.9731</td>
+                      <td>55.77</td>
+                      <td>58.23</td>
+                      <td>0.5948</td>
+                    </tr>
+                    <tr>
+                      <td>PASD</td>
+                      <td>20.77</td>
+                      <td>0.4958</td>
+                      <td>0.4410</td>
+                      <td>0.2538</td>
+                      <td>4.8328</td>
+                      <td>40.77</td>
+                      <td>66.85</td>
+                      <td>0.6799</td>
+                    </tr>
+                    <tr>
+                      <td>DiffBIR</td>
+                      <td>20.94</td>
+                      <td>0.4938</td>
+                      <td>0.4270</td>
+                      <td>0.2471</td>
+                      <td>4.7211</td>
+                      <td>40.42</td>
+                      <td>65.23</td>
+                      <td>0.6664</td>
+                    </tr>
+                    <tr>
+                      <td>SeeSR</td>
+                      <td>21.19</td>
+                      <td>0.5386</td>
+                      <td class="quan-second-best">0.3843</td>
+                      <td class="quan-second-best">0.2257</td>
+                      <td>4.9275</td>
+                      <td class="quan-second-best">31.93</td>
+                      <td class="quan-second-best">68.33</td>
+                      <td class="quan-second-best">0.6946</td>
+                    </tr>
+                    <tr class="quan-lightgray2">
+                      <td><b>MMSR</b></td>
+                      <td>21.74</td>
+                      <td class="quan-second-best">0.5693</td>
+                      <td class="quan-best">0.3707</td>
+                      <td class="quan-best">0.2071</td>
+                      <td class="quan-best">4.2532</td>
+                      <td class="quan-best">29.35</td>
+                      <td class="quan-best">70.06</td>
+                      <td class="quan-best">0.7164</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            
+              <div class="quan-table-wrapper-2">
+                <div class="quan-table-wrapper-2-top">
+                  <table class="quan-table">
+                    <thead>
+                      <tr>
+                        <th colspan="9" style="text-align:left"><span class="quan-italic">DIV2K-Val-100</span> 1024 × 1024</th>
+                      </tr>
+                      <tr>
+                        <th>Methods</th>
+                        <th>PSNR</th>
+                        <th>SSIM</th>
+                        <th>LPIPS ↓</th>
+                        <th>DISTS ↓</th>
+                        <th>NIQE ↓</th>
+                        <th>MANIQA</th>
+                        <th>MUSIQ</th>
+                        <th>CLIPIQA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>R-ESRGAN</td>
+                        <td class="quan-second-best">21.77</td>
+                        <td class="quan-best">0.5813</td>
+                        <td>0.3624</td>
+                        <td>0.1990</td>
+                        <td>3.6573</td>
+                        <td>0.4046</td>
+                        <td>47.54</td>
+                        <td>0.5358</td>
+                      </tr>
+                      <tr>
+                        <td>StableSR</td>
+                        <td>20.07</td>
+                        <td>0.3947</td>
+                        <td>0.5097</td>
+                        <td>0.2427</td>
+                        <td>3.6260</td>
+                        <td>0.4113</td>
+                        <td>65.39</td>
+                        <td>0.6938</td>
+                      </tr>
+                      <tr>
+                        <td>PASD</td>
+                        <td>21.27</td>
+                        <td>0.5369</td>
+                        <td>0.3473</td>
+                        <td>0.1753</td>
+                        <td class="quan-second-best">3.6321</td>
+                        <td>0.4708</td>
+                        <td>69.69</td>
+                        <td>0.6914</td>
+                      </tr>
+                      <tr>
+                        <td>SUPIR</td>
+                        <td>20.65</td>
+                        <td>0.5350</td>
+                        <td>0.3849</td>
+                        <td>0.1814</td>
+                        <td>3.6458</td>
+                        <td>0.4051</td>
+                        <td>65.88</td>
+                        <td>0.5697</td>
+                      </tr>
+                      <tr>
+                        <td>SeeSR</td>
+                        <td>21.31</td>
+                        <td class="quan-second-best">0.5578</td>
+                        <td class="quan-second-best">0.3273</td>
+                        <td class="quan-second-best">0.1620</td>
+                        <td>4.0215</td>
+                        <td class="quan-best">0.5439</td>
+                        <td class="quan-second-best">69.79</td>
+                        <td class="quan-second-best">0.6941</td>
+                      </tr>
+                      <tr class="quan-lightgray2">
+                        <td><b>MMSR</b></td>
+                        <td class="quan-best">21.87</td>
+                        <td>0.5565</td>
+                        <td class="quan-best">0.2810</td>
+                        <td class="quan-best">0.1492</td>
+                        <td class="quan-best">3.4243</td>
+                        <td class="quan-second-best">0.4885</td>
+                        <td class="quan-best">72.31</td>
+                        <td class="quan-best">0.7294</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="quan-table-wrapper-2-bottom">
+                  <table class="quan-table">
+                    <thead>
+                      <tr>
+                        <th colspan="9" style="text-align:left"><span class="quan-italic">RealSR</span> 512 × 512</th>
+                      </tr>
+                      <tr>
+                        <th>Methods</th>
+                        <th>PSNR</th>
+                        <th>SSIM</th>
+                        <th>LPIPS ↓</th>
+                        <th>LIQE</th>
+                        <th>NIMA</th>
+                        <th>MANIQA</th>
+                        <th>MUSIQ</th>
+                        <th>CLIPIQA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>R-ESRGAN</td>
+                        <td class="quan-best">25.69</td>
+                        <td class="quan-best">0.7616</td>
+                        <td class="quan-best">0.2727</td>
+                        <td>3.3574</td>
+                        <td>4.6548</td>
+                        <td>0.5487</td>
+                        <td>60.18</td>
+                        <td>0.4449</td>
+                      </tr>
+                      <tr>
+                        <td>StableSR</td>
+                        <td>24.70</td>
+                        <td>0.7085</td>
+                        <td>0.3018</td>
+                        <td>3.6106</td>
+                        <td>4.8150</td>
+                        <td>0.6221</td>
+                        <td>65.78</td>
+                        <td>0.6178</td>
+                      </tr>
+                      <tr>
+                        <td>PASD</td>
+                        <td>24.29</td>
+                        <td>0.6630</td>
+                        <td>0.3435</td>
+                        <td>3.5749</td>
+                        <td>4.8554</td>
+                        <td>0.6493</td>
+                        <td>68.69</td>
+                        <td>0.6590</td>
+                      </tr>
+                      <tr>
+                        <td>SUPIR</td>
+                        <td>22.97</td>
+                        <td>0.6298</td>
+                        <td>0.3750</td>
+                        <td>3.5682</td>
+                        <td>4.5757</td>
+                        <td>0.5745</td>
+                        <td>61.49</td>
+                        <td>0.6434</td>
+                      </tr>
+                      <tr>
+                        <td>SeeSR</td>
+                        <td class="quan-second-best">25.18</td>
+                        <td class="quan-second-best">0.7216</td>
+                        <td>0.3009</td>
+                        <td class="quan-second-best">4.1360</td>
+                        <td class="quan-second-best">4.9193</td>
+                        <td class="quan-second-best">0.6442</td>
+                        <td class="quan-second-best">69.77</td>
+                        <td class="quan-second-best">0.6612</td>
+                      </tr>
+                      <tr class="quan-lightgray2">
+                        <td><b>MMSR</b></td>
+                        <td>24.83</td>
+                        <td>0.7003</td>
+                        <td class="quan-second-best">0.2952</td>
+                        <td class="quan-best">4.3468</td>
+                        <td class="quan-best">5.1094</td>
+                        <td class="quan-best">0.6578</td>
+                        <td class="quan-best">71.33</td>
+                        <td class="quan-best">0.6717</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End youtube video -->
+
+  
+  <!-- Youtube video -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
             <h2 class="title is-3">LR Image Captioning Prompt Engineering</h2>
             <p>Image caption result comparisons between different prompts. We show that our prompt that utilizes
               in-context learning is stable at most cases and can always get more detailed image captions without
@@ -702,36 +1281,59 @@
   </section>
   <!-- End youtube video -->
 
-    <!-- Paper abstract -->
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                We propose a novel approach that leverages the rich contextual information available in multiple
-                modalities --including <span class="highlight-animated blue">depth</span>, <span
-                  class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
-                and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
-                for SISR within a diffusion model framework.
-                We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
-                an arbitrary number of input modalities without requiring significant modifications to the diffusion
-                process.
-                Crucially, we mitigate hallucinations, often introduced by text prompts, by using spatial information from
-                other modalities to guide regional text-based conditioning.
-                Each modality's guidance strength can also be controlled independently, allowing steering outputs toward
-                different directions, such as increasing bokeh through depth or adjusting object prominence via
-                segmentation.
-                Extensive experiments demonstrate that our model surpasses state-of-the-art generative SISR methods,
-                achieving superior visual quality and fidelity.
-              </p>
-            </div>
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Robustness to noisy multi-modal inputs</h2>
+          <div class="content has-text-justified">
+            <p>
+              Low-resolution (LR) images, especially those severely degraded, can yield inaccurate multi-modal information like faulty edge, misidentify objects, etc. 
+
+              To further illustrate the robustness, the figure below shows the behavior of each method and strategy on different qualities of LR images, as measured by MUSIQ.
+            </p>
+
+            <img src="static/images/stable.png" alt="">
+
+            <p>
+              Even when inaccurate multi-modal information occurs in low MUSIQ LR images, our method with LR pre-processing still achieves stable SR performance, as quantified by the smallest slope and large y-offset in the scattering points. This demonstrates MMSR stability with low-quality LR images.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- End paper abstract -->
+    </div>
+  </section>
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We propose a novel approach that leverages the rich contextual information available in multiple
+              modalities --including <span class="highlight-animated blue">depth</span>, <span
+                class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
+              and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
+              for SISR within a diffusion model framework.
+              We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
+              an arbitrary number of input modalities without requiring significant modifications to the diffusion
+              process.
+              Crucially, we mitigate hallucinations, often introduced by text prompts, by using spatial information from
+              other modalities to guide regional text-based conditioning.
+              Each modality's guidance strength can also be controlled independently, allowing steering outputs toward
+              different directions, such as increasing bokeh through depth or adjusting object prominence via
+              segmentation.
+              Extensive experiments demonstrate that our model surpasses state-of-the-art generative SISR methods,
+              achieving superior visual quality and fidelity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
 
   <!-- Video carousel -->
   <!-- <section class="hero is-small">
@@ -864,35 +1466,38 @@
     });
 
     const table = document.querySelector('table');
-  const images = table.querySelectorAll('img');
+    const images = table.querySelectorAll('img');
 
 
-  images.forEach(img => {
-    img.addEventListener('mouseover', function() {
-      this.classList.add('zoomed-image');
-      const row = this.closest('tr');
-      if (row) {
-        const cells = row.querySelectorAll('td');
-        cells.forEach(cell => {
-          if (!cell.contains(this)) {
-            cell.classList.add('row-dimmed');
-          }
-        });
-      }
+    images.forEach(img => {
+      img.addEventListener('mouseover', function () {
+        this.classList.add('zoomed-image');
+        const row = this.closest('tr');
+        if (row) {
+          const cells = row.querySelectorAll('td');
+          cells.forEach(cell => {
+            if (!cell.contains(this)) {
+              cell.classList.add('row-dimmed');
+            }
+          });
+        }
+      });
+
+      img.addEventListener('mouseout', function () {
+        this.classList.remove('zoomed-image');
+        const row = this.closest('tr');
+        if (row) {
+          const cells = row.querySelectorAll('td');
+          cells.forEach(cell => {
+            cell.classList.remove('row-dimmed');
+          });
+        }
+      });
     });
-
-    img.addEventListener('mouseout', function() {
-      this.classList.remove('zoomed-image');
-      const row = this.closest('tr');
-      if (row) {
-        const cells = row.querySelectorAll('td');
-        cells.forEach(cell => {
-          cell.classList.remove('row-dimmed');
-        });
-      }
-    });
-  });
   </script>
+  <style>
+
+  </style>
   <!-- Statcounter tracking code -->
 
   <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
