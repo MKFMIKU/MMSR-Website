@@ -512,10 +512,49 @@
     </div>
   </section>
 
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Single-image super-resolution (SISR) remains challenging due to the inherent difficulty of recovering fine-grained details and preserving perceptual quality from low-resolution inputs.
+              Existing methods often rely on limited image priors, leading to suboptimal results.
+              We propose a novel approach that leverages the rich contextual information available in multiple
+              modalities --including <span class="highlight-animated blue">depth</span>, <span
+                class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
+              and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
+              for SISR within a diffusion model framework.
+              We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
+              an arbitrary number of input modalities without requiring significant modifications to the diffusion
+              process.
+              Crucially, we mitigate hallucinations, often introduced by text prompts, by using spatial information from
+              other modalities to guide regional text-based conditioning.
+              Each modality's guidance strength can also be controlled independently, allowing steering outputs toward
+              different directions, such as increasing bokeh through depth or adjusting object prominence via
+              segmentation.
+              Extensive experiments demonstrate that our model surpasses state-of-the-art generative SISR methods,
+              achieving superior visual quality and fidelity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+
   <!-- Image carousel -->
-  <section class="hero is-small is-light">
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Multimodal SR Results</h2>
+        </div>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <div class="multimodaloutput-input-row">
@@ -618,9 +657,104 @@
                   of the structure against a clear sky.</p>
               </div>
             </div>
-
           </div>
+
+          <div class="item">
+            <div class="multimodaloutput-input-row">
+              <div class="multimodaloutput">
+                <div class="juxtapose" id="EVAL_1aa13ca74154f6ff"></div>
+              </div>
+              <div class="multimodalinput">
+                MMSR's Depth Input
+                <div class="depinput">
+                  
+                  <img src="figures/realsr/EVAL_1aa13ca74154f6ff_dep.png" alt="">
+                </div>
+                MMSR's Edge Input
+                <div class="edginput">
+                  
+                  <img src="figures/realsr/EVAL_1aa13ca74154f6ff_edg.png" alt="">
+                </div>
+                MMSR's Seg Input
+                <div class="seginput">
+                  
+                  <img src="figures/realsr/EVAL_1aa13ca74154f6ff_seg.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="textinput">
+              <span>MMSR's Prompt Input</span>
+              <div style="display: flex; align-items: center; height: 100%;">
+                <p>Photo of a baseball stadium scoreboard, close-up view.  The image shows the words "CIPAL PARK" prominently displayed on a metal structure above various advertisements including Bud Light and Coca-Cola.  Below the main sign are several smaller screens displaying baseball action and other promotional material. The overall composition is centered on the stadium signage against a blurred background of netting and sky.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="multimodaloutput-input-row">
+              <div class="multimodaloutput">
+                <div class="juxtapose" id="a000244"></div>
+              </div>
+              <div class="multimodalinput">
+                MMSR's Depth Input
+                <div class="depinput">
+                  
+                  <img src="ibis-results/000244_dep.png" alt="">
+                </div>
+                MMSR's Edge Input
+                <div class="edginput">
+                  
+                  <img src="ibis-results/000244_edg.png" alt="">
+                </div>
+                MMSR's Seg Input
+                <div class="seginput">
+                  
+                  <img src="ibis-results/000244_seg.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="textinput">
+              <span>MMSR's Prompt Input</span>
+              <div style="display: flex; align-items: center; height: 100%;">
+                <p>Photo of skyscrapers viewed from below, black and white.  The image features three tall buildings, two on the sides and one dominating the lower half. The composition is symmetrical, with the buildings framing a bright white sky. The style is minimalist, emphasizing geometric lines and textures.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="multimodaloutput-input-row">
+              <div class="multimodaloutput">
+                <div class="juxtapose" id="a000710"></div>
+              </div>
+              <div class="multimodalinput">
+                MMSR's Depth Input
+                <div class="depinput">
+                  
+                  <img src="ibis-results/000710_dep.png" alt="">
+                </div>
+                MMSR's Edge Input
+                <div class="edginput">
+                  
+                  <img src="ibis-results/000710_edg.png" alt="">
+                </div>
+                MMSR's Seg Input
+                <div class="seginput">
+                  
+                  <img src="ibis-results/000710_seg.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="textinput">
+              <span>MMSR's Prompt Input</span>
+              <div style="display: flex; align-items: center; height: 100%;">
+                <p>Photo of two surfers on a grassy cliff overlooking a black sand beach.  The surfers are positioned slightly off-center, each carrying a white surfboard.  The dark volcanic sand contrasts sharply with the white surf and green grass. The ocean waves are visible in the upper portion of the image creating a clear horizon line.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
+        <p>*See paper and supplementary material for experimental settings.</p>
+
       </div>
     </div>
   </section>
@@ -628,9 +762,7 @@
 
 
 
-
-
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container is-four-fifths">
         <!-- Paper video. -->
@@ -657,7 +789,7 @@
     </div>
   </section>
 
-  <section class="hero is-small is-light">
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <!-- Paper video. -->
@@ -851,7 +983,7 @@
   </section>
 
   <!-- Youtube video -->
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
         <!-- Paper video. -->
@@ -1206,7 +1338,7 @@
 
   
   <!-- Youtube video -->
-  <section class="hero is-small is-light">
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <!-- Paper video. -->
@@ -1280,7 +1412,7 @@
   </section>
   <!-- End youtube video -->
 
-  <section class="section hero">
+  <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -1302,37 +1434,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Paper abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              We propose a novel approach that leverages the rich contextual information available in multiple
-              modalities --including <span class="highlight-animated blue">depth</span>, <span
-                class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
-              and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
-              for SISR within a diffusion model framework.
-              We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
-              an arbitrary number of input modalities without requiring significant modifications to the diffusion
-              process.
-              Crucially, we mitigate hallucinations, often introduced by text prompts, by using spatial information from
-              other modalities to guide regional text-based conditioning.
-              Each modality's guidance strength can also be controlled independently, allowing steering outputs toward
-              different directions, such as increasing bokeh through depth or adjusting object prominence via
-              segmentation.
-              Extensive experiments demonstrate that our model surpasses state-of-the-art generative SISR methods,
-              achieving superior visual quality and fidelity.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End paper abstract -->
 
   <!-- Video carousel -->
   <!-- <section class="hero is-small">
@@ -1464,6 +1565,47 @@
       makeResponsive: true
     });
 
+    new juxtapose.JXSlider('#EVAL_1aa13ca74154f6ff', [{
+      src: './figures/realsr/EVAL_1aa13ca74154f6ff_lr_half.png',
+      label: 'LR Input',
+    }, {
+      src: './figures/realsr/EVAL_1aa13ca74154f6ff_ours_half.png',
+      label: 'MMSR\'s Result',
+    }], {
+      animate: true,
+      showLabels: true,
+      showCredits: true,
+      startingPosition: "25%",
+      makeResponsive: true
+    });
+
+    new juxtapose.JXSlider('#a000244', [{
+      src: './ibis-results/000244_lr_half.png',
+      label: 'LR Input',
+    }, {
+      src: './ibis-results/000244_ours_half.png',
+      label: 'MMSR\'s Result',
+    }], {
+      animate: true,
+      showLabels: true,
+      showCredits: true,
+      startingPosition: "25%",
+      makeResponsive: true
+    });
+  
+    new juxtapose.JXSlider('#a000710', [{
+      src: './ibis-results/000710_lr_half.png',
+      label: 'LR Input',
+    }, {
+      src: './ibis-results/000710_ours_half.png',
+      label: 'MMSR\'s Result',
+    }], {
+      animate: true,
+      showLabels: true,
+      showCredits: true,
+      startingPosition: "25%",
+      makeResponsive: true
+    });
     const table = document.querySelector('table');
     const images = table.querySelectorAll('img');
 
