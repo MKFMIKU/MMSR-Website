@@ -950,445 +950,14 @@
     </div>
   </section>
 
-  <!-- Youtube video -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container">
-        <!-- Paper video. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Quantitative Performance</h2>
-            Quantitative comparison with state-of-the-art methods on common benchmarks.
-            <br>
-            <br>
-            <div class="quan-container">
-              <div class="quan-table-wrapper-1">
-                <table class="quan-table">
-                  <thead>
-                    <tr>
-                      <th colspan="9" style="text-align:left"><span class="quan-italic">DIV2K-Val-3k</span> 512 × 512</th>
-                    </tr>
-                    <tr>
-                      <th>Methods</th>
-                      <th>PSNR</th>
-                      <th>SSIM</th>
-                      <th>LPIPS ↓</th>
-                      <th>DISTS ↓</th>
-                      <th>NIQE ↓</th>
-                      <th>FID ↓</th>
-                      <th>MUSIQ</th>
-                      <th>CLIPIQA</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>BSRGAN</td>
-                      <td class="quan-second-best">21.87</td>
-                      <td>0.5539</td>
-                      <td>0.4136</td>
-                      <td>0.2737</td>
-                      <td>4.7615</td>
-                      <td>64.28</td>
-                      <td>59.11</td>
-                      <td>0.5183</td>
-                    </tr>
-                    <tr>
-                      <td>R-ESRGAN</td>
-                      <td class="quan-best">21.94</td>
-                      <td class="quan-best">0.5736</td>
-                      <td>0.3868</td>
-                      <td>0.2601</td>
-                      <td>4.9209</td>
-                      <td>53.46</td>
-                      <td>58.64</td>
-                      <td>0.5424</td>
-                    </tr>
-                    <tr>
-                      <td>LDL</td>
-                      <td>21.52</td>
-                      <td>0.5690</td>
-                      <td>0.3995</td>
-                      <td>0.2688</td>
-                      <td>5.0249</td>
-                      <td>58.94</td>
-                      <td>57.90</td>
-                      <td>0.5313</td>
-                    </tr>
-                    <tr>
-                      <td>DASR</td>
-                      <td>21.72</td>
-                      <td>0.5536</td>
-                      <td>0.4266</td>
-                      <td>0.2688</td>
-                      <td>4.8596</td>
-                      <td>67.22</td>
-                      <td>54.22</td>
-                      <td>0.5241</td>
-                    </tr>
-                    <tr>
-                      <td>FeMASR</td>
-                      <td>20.85</td>
-                      <td>0.5163</td>
-                      <td>0.3973</td>
-                      <td>0.2428</td>
-                      <td><span class="quan-second-best">4.5726</span></td>
-                      <td>53.70</td>
-                      <td>58.10</td>
-                      <td>0.5597</td>
-                    </tr>
-                    <tr>
-                      <td>LDM</td>
-                      <td>21.26</td>
-                      <td>0.5239</td>
-                      <td>0.4154</td>
-                      <td>0.2500</td>
-                      <td>6.4667</td>
-                      <td>41.93</td>
-                      <td>56.52</td>
-                      <td>0.5695</td>
-                    </tr>
-                    <tr>
-                      <td>StableSR</td>
-                      <td>20.84</td>
-                      <td>0.4887</td>
-                      <td>0.4055</td>
-                      <td>0.2542</td>
-                      <td>4.6551</td>
-                      <td>36.57</td>
-                      <td>62.95</td>
-                      <td>0.6486</td>
-                    </tr>
-                    <tr>
-                      <td>ResShift</td>
-                      <td>21.75</td>
-                      <td>0.5422</td>
-                      <td>0.4284</td>
-                      <td>0.2606</td>
-                      <td>6.9731</td>
-                      <td>55.77</td>
-                      <td>58.23</td>
-                      <td>0.5948</td>
-                    </tr>
-                    <tr>
-                      <td>PASD</td>
-                      <td>20.77</td>
-                      <td>0.4958</td>
-                      <td>0.4410</td>
-                      <td>0.2538</td>
-                      <td>4.8328</td>
-                      <td>40.77</td>
-                      <td>66.85</td>
-                      <td>0.6799</td>
-                    </tr>
-                    <tr>
-                      <td>DiffBIR</td>
-                      <td>20.94</td>
-                      <td>0.4938</td>
-                      <td>0.4270</td>
-                      <td>0.2471</td>
-                      <td>4.7211</td>
-                      <td>40.42</td>
-                      <td>65.23</td>
-                      <td>0.6664</td>
-                    </tr>
-                    <tr>
-                      <td>SeeSR</td>
-                      <td>21.19</td>
-                      <td>0.5386</td>
-                      <td class="quan-second-best">0.3843</td>
-                      <td class="quan-second-best">0.2257</td>
-                      <td>4.9275</td>
-                      <td class="quan-second-best">31.93</td>
-                      <td class="quan-second-best">68.33</td>
-                      <td class="quan-second-best">0.6946</td>
-                    </tr>
-                    <tr class="quan-lightgray2">
-                      <td><b>MMSR</b></td>
-                      <td>21.74</td>
-                      <td class="quan-second-best">0.5693</td>
-                      <td class="quan-best">0.3707</td>
-                      <td class="quan-best">0.2071</td>
-                      <td class="quan-best">4.2532</td>
-                      <td class="quan-best">29.35</td>
-                      <td class="quan-best">70.06</td>
-                      <td class="quan-best">0.7164</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            
-              <div class="quan-table-wrapper-2">
-                <div class="quan-table-wrapper-2-top">
-                  <table class="quan-table">
-                    <thead>
-                      <tr>
-                        <th colspan="9" style="text-align:left"><span class="quan-italic">DIV2K-Val-100</span> 1024 × 1024</th>
-                      </tr>
-                      <tr>
-                        <th>Methods</th>
-                        <th>PSNR</th>
-                        <th>SSIM</th>
-                        <th>LPIPS ↓</th>
-                        <th>DISTS ↓</th>
-                        <th>NIQE ↓</th>
-                        <th>MANIQA</th>
-                        <th>MUSIQ</th>
-                        <th>CLIPIQA</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>R-ESRGAN</td>
-                        <td class="quan-second-best">21.77</td>
-                        <td class="quan-best">0.5813</td>
-                        <td>0.3624</td>
-                        <td>0.1990</td>
-                        <td>3.6573</td>
-                        <td>0.4046</td>
-                        <td>47.54</td>
-                        <td>0.5358</td>
-                      </tr>
-                      <tr>
-                        <td>StableSR</td>
-                        <td>20.07</td>
-                        <td>0.3947</td>
-                        <td>0.5097</td>
-                        <td>0.2427</td>
-                        <td>3.6260</td>
-                        <td>0.4113</td>
-                        <td>65.39</td>
-                        <td>0.6938</td>
-                      </tr>
-                      <tr>
-                        <td>PASD</td>
-                        <td>21.27</td>
-                        <td>0.5369</td>
-                        <td>0.3473</td>
-                        <td>0.1753</td>
-                        <td class="quan-second-best">3.6321</td>
-                        <td>0.4708</td>
-                        <td>69.69</td>
-                        <td>0.6914</td>
-                      </tr>
-                      <tr>
-                        <td>SUPIR</td>
-                        <td>20.65</td>
-                        <td>0.5350</td>
-                        <td>0.3849</td>
-                        <td>0.1814</td>
-                        <td>3.6458</td>
-                        <td>0.4051</td>
-                        <td>65.88</td>
-                        <td>0.5697</td>
-                      </tr>
-                      <tr>
-                        <td>SeeSR</td>
-                        <td>21.31</td>
-                        <td class="quan-second-best">0.5578</td>
-                        <td class="quan-second-best">0.3273</td>
-                        <td class="quan-second-best">0.1620</td>
-                        <td>4.0215</td>
-                        <td class="quan-best">0.5439</td>
-                        <td class="quan-second-best">69.79</td>
-                        <td class="quan-second-best">0.6941</td>
-                      </tr>
-                      <tr class="quan-lightgray2">
-                        <td><b>MMSR</b></td>
-                        <td class="quan-best">21.87</td>
-                        <td>0.5565</td>
-                        <td class="quan-best">0.2810</td>
-                        <td class="quan-best">0.1492</td>
-                        <td class="quan-best">3.4243</td>
-                        <td class="quan-second-best">0.4885</td>
-                        <td class="quan-best">72.31</td>
-                        <td class="quan-best">0.7294</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="quan-table-wrapper-2-bottom">
-                  <table class="quan-table">
-                    <thead>
-                      <tr>
-                        <th colspan="9" style="text-align:left"><span class="quan-italic">RealSR</span> 512 × 512</th>
-                      </tr>
-                      <tr>
-                        <th>Methods</th>
-                        <th>PSNR</th>
-                        <th>SSIM</th>
-                        <th>LPIPS ↓</th>
-                        <th>LIQE</th>
-                        <th>NIMA</th>
-                        <th>MANIQA</th>
-                        <th>MUSIQ</th>
-                        <th>CLIPIQA</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>R-ESRGAN</td>
-                        <td class="quan-best">25.69</td>
-                        <td class="quan-best">0.7616</td>
-                        <td class="quan-best">0.2727</td>
-                        <td>3.3574</td>
-                        <td>4.6548</td>
-                        <td>0.5487</td>
-                        <td>60.18</td>
-                        <td>0.4449</td>
-                      </tr>
-                      <tr>
-                        <td>StableSR</td>
-                        <td>24.70</td>
-                        <td>0.7085</td>
-                        <td>0.3018</td>
-                        <td>3.6106</td>
-                        <td>4.8150</td>
-                        <td>0.6221</td>
-                        <td>65.78</td>
-                        <td>0.6178</td>
-                      </tr>
-                      <tr>
-                        <td>PASD</td>
-                        <td>24.29</td>
-                        <td>0.6630</td>
-                        <td>0.3435</td>
-                        <td>3.5749</td>
-                        <td>4.8554</td>
-                        <td>0.6493</td>
-                        <td>68.69</td>
-                        <td>0.6590</td>
-                      </tr>
-                      <tr>
-                        <td>SUPIR</td>
-                        <td>22.97</td>
-                        <td>0.6298</td>
-                        <td>0.3750</td>
-                        <td>3.5682</td>
-                        <td>4.5757</td>
-                        <td>0.5745</td>
-                        <td>61.49</td>
-                        <td>0.6434</td>
-                      </tr>
-                      <tr>
-                        <td>SeeSR</td>
-                        <td class="quan-second-best">25.18</td>
-                        <td class="quan-second-best">0.7216</td>
-                        <td>0.3009</td>
-                        <td class="quan-second-best">4.1360</td>
-                        <td class="quan-second-best">4.9193</td>
-                        <td class="quan-second-best">0.6442</td>
-                        <td class="quan-second-best">69.77</td>
-                        <td class="quan-second-best">0.6612</td>
-                      </tr>
-                      <tr class="quan-lightgray2">
-                        <td><b>MMSR</b></td>
-                        <td>24.83</td>
-                        <td>0.7003</td>
-                        <td class="quan-second-best">0.2952</td>
-                        <td class="quan-best">4.3468</td>
-                        <td class="quan-best">5.1094</td>
-                        <td class="quan-best">0.6578</td>
-                        <td class="quan-best">71.33</td>
-                        <td class="quan-best">0.6717</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End youtube video -->
-
-  
-  <!-- Youtube video -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <!-- Paper video. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">LR Image Captioning Prompt Engineering</h2>
-            <p>Image caption result comparisons between different prompts. We show that our prompt that utilizes
-              in-context learning is stable at most cases and can always get more detailed image captions without
-              useless procedural words.</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Prompt</th>
-                  <th><em>Describe this image and its style in a very detailed manner</em></th>
-                  <th>
-                    <em class="prompt-text">
-                      Write a four sentence caption in English for this image. In the first sentence describe the style
-                      and type (painting, photo, etc) of the image. Describe in the remaining sentences the contents and
-                      composition of the image. Only use language that would be used to prompt a text to image model. Do
-                      not include usage. Comma separate keywords rather than using "or". Precise composition is
-                      important. Avoid phrases like "Here is...". Good examples are: "Photo of an alien woman with a
-                      glowing halo standing on top of a mountain, wearing a white robe and silver mask in the futuristic
-                      style with futuristic design, sky background, soft lighting, dynamic pose, a sense of future
-                      technology, a science fiction movie scene rendered in the Unreal Engine."
-                    </em>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="arraystretch">
-                <tr>
-                  <td><img src="results/captions/ACAT100_XXXX_20230503_041006_951_input_center.jpg" alt="Image 1"></td>
-                  <td>
-                    **Option 1 (Short & Evocative):** Textures of twilight.<br>
-                    **Option 2 (Descriptive):** Smooth, windswept curves of snow and
-                    shadow paint an abstract landscape in dusky hues.<br>
-                    **Option 3 (Focusing on Light):** The fading light reveals the
-                    delicate textures etched onto the snowy slopes...
-                  </td>
-                  <td>Photo of a mountainous landscape, abstract, textured.&nbsp; The image features sweeping curves of
-                    snow and ice, creating a dramatic diagonal composition.&nbsp; Shades of purple and blue dominate the
-                    color palette, lending a cool and ethereal atmosphere. The texture is highly detailed, showing the
-                    granular nature of the snow and the sculpted forms of the terrain.</td>
-                </tr>
-                <tr>
-                  <td><img src="results/captions/ACAT100_XXXX_20230531_081717_577_input_center.jpg" alt="Image 2"></td>
-                  <td>a close-up view of a car's hood, reflecting a sunlit scene. The hood is slightly wet, indicated by
-                    the subtle sheen of water droplets that catch and scatter the light. The reflection is not sharp or
-                    complete, but rather a shimmering impression of the surrounding environment...</td>
-                  <td>Photorealistic image,&nbsp; exterior shot, modern architecture.&nbsp; A sleek dark gray apartment
-                    building with balconies is partially visible through lush green foliage.&nbsp; The foreground
-                    features a wet car hood reflecting sunlight.&nbsp; The composition emphasizes a shallow depth of
-                    field, focusing on the reflection and blurring the background.</td>
-                </tr>
-                <tr>
-                  <td><img src="results/captions/ACAT_XXXX_20230506_203944_098_output_metadata.jpg" alt="Image 3"></td>
-                  <td>Here's a detailed description of the image and its style: The image is a landscape photograph,
-                    seemingly taken in a canyon or arid desert region, focusing on two hikers traversing a rocky path.
-                    Composition and Subject Matter: ...</td>
-                  <td>Photo of hikers in a canyon, Bryce Canyon National Park. Two people walk along a narrow path
-                    carved into the reddish-orange sandstone cliffs. A small evergreen tree grows in the foreground near
-                    the base of the cliff. The composition is a high-angle view, showcasing the scale of the canyon
-                    walls and the small figures of the hikers.</td>
-                </tr>
-              </tbody>
-            </table>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End youtube video -->
-
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column">
           <h2 class="title is-3">Robustness to noisy multi-modal inputs</h2>
           <div class="content has-text-justified">
             <p>
-              Low-resolution (LR) images, especially those severely degraded, can yield inaccurate multi-modal information like faulty edge, misidentify objects, etc. 
-
+              Severely degraded, low-resolution (LR) images can produce inaccurate multi-modal information, manifesting as distorted edges, misidentified objects, and other artifacts.
               To further illustrate the robustness, the figure below shows the behavior of each method and strategy on different qualities of LR images, as measured by MUSIQ.
             </p>
 
@@ -1402,6 +971,41 @@
       </div>
     </div>
   </section>
+
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Quantitative Performance</h2>
+          <div class="content has-text-justified">
+            <p>
+              Quantitative comparison with state-of-the-art methods on both synthetic and real-world benchmarks. The best and second best results of each metric are highlighted in red and blue, respectively.
+            </p>
+            <img src="static/images/table1.png" alt="" style="width: 100%; padding-left: 4rem; padding-right: 4rem;">
+            <img src="static/images/table2.png" alt="" style="width: 100%; padding-left: 4rem; padding-right: 4rem;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Multimodal Controllability Comparisons</h2>
+          <div class="content has-text-justified">
+            <p>
+              Our method allows for fine-grained control over super-resolution results by adjusting the influence of each input modality. For example, reducing the edge temperature enhances edge sharpness (first row). Lowering the segmentation temperature emphasizes distinct features, such as the star pattern on the flag (second row). Decreasing the depth temperature accentuates depth-of-field effects, like the bokeh between the foreground and background (third row).
+            </p>
+           <img src="results/ibis-control-compare_large.png" alt="" style="width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Video carousel -->
   <!-- <section class="hero is-small">
