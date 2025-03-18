@@ -417,7 +417,7 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://kfmei.com/" target="_blank">Kangfu Mei</a> <sup class="font-size: tiny">1, 2</sup>
+                <a href="https://kfmei.com/" target="_blank">Kangfu Mei</a> <sup class="font-size: tiny">1, 2, *</sup>
                 ,</span>
               <span class="author-block">
                 <a href="https://research.google/people/105490/" target="_blank">Hossein Talebi</a> <sup>1</sup>
@@ -439,10 +439,11 @@
               </span>
             </div>
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Google AI Innovation + Research <sup>1</sup></span> <span class="author-block">
+              <span class="author-block">Google<sup>1</sup></span> <span class="author-block">
                 Johns Hopkins University <sup>2</sup> </span>
               <br><i>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025</i></span>
               <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+              <span class="author-block" style="font-size: 12pt;"><i>* work was done while author was an intern at Google</i></span>
             </div>
 
             <div class="is-size-5 publication-authors"
@@ -451,8 +452,8 @@
                 <img src="static/images/JHU.logo_horizontal.blue.png" alt="JHU logo" style="max-height: 72px;" />
               </span>
               <span class="author-block">
-                <img src="static/images/lockup_GoogleResearch_FullColor_rgb_3568x512px_clr_2x.png"
-                  alt="Google Research logo" style="max-height: 36px;" />
+                <img src="static/images/google_logo.png"
+                  alt="Google logo" style="max-height: 42px;" />
               </span>
               <span class="author-block" style="padding-left: 2rem;">
                 <img src="static/images/CVPR25logo.png" alt="CVPR 2025 logo" style="max-height: 48px;" />
@@ -524,9 +525,8 @@
               Single-image super-resolution (SISR) remains challenging due to the inherent difficulty of recovering fine-grained details and preserving perceptual quality from low-resolution inputs.
               Existing methods often rely on limited image priors, leading to suboptimal results.
               We propose a novel approach that leverages the rich contextual information available in multiple
-              modalities --including <span class="highlight-animated blue">depth</span>, <span
-                class="highlight-animated green">segmentation</span>, <span class="highlight-animated red">edges</span>,
-              and <span class="highlight-animated yellow">text prompts</span> -- to learn a powerful generative prior
+              modalities --including depth, segmentation, edges,
+              and text prompts -- to learn a powerful generative prior
               for SISR within a diffusion model framework.
               We introduce a flexible network architecture that effectively fuses multimodal information, accommodating
               an arbitrary number of input modalities without requiring significant modifications to the diffusion
@@ -896,38 +896,6 @@
                   <td class="results-tabsecond"><img
                       src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_0_supir.jpg" style="width: 14vw;"></td>
                   <td class="results-tabsecond"><img src="figures/realsr/EVAL_50096552772_ccff9fed3a_o_center_ours.jpg"
-                      style="width: 14vw;"></td>
-                </tr>
-                <tr>
-                  <td class="results-tabfirst"><small>LR</small></td>
-                  <td class="results-tabfirst"><small>Caption</small></td>
-                  <td class="results-tabfirst"><small>Patch 1</small></td>
-                  <td></td>
-                  <td class="results-tabsecond"><small>PASD (Zoomed)</small></td>
-                  <td class="results-tabsecond"><small>SeeSR (Zoomed)</small></td>
-                  <td class="results-tabsecond"><small>SUPIR (Zoomed)</small></td>
-                  <td class="results-tabsecond"><small>MMSR (Zoomed)</small></td>
-                </tr>
-                <tr>
-                  <td colspan="8"></td>
-                </tr>
-                <tr>
-                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_lr_mark.png"
-                      style="width: 14vw;"></td>
-                  <td class="results-tabfirst">
-                    <div class="results-caption-container">Photo of a window with a sign, brick wall. A simple white
-                      rectangular sign with black text reading "I SUPPORT WIKILEAKS" is taped \dots</div>
-                  </td>
-                  <td class="results-tabfirst"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_lr.png"
-                      style="width: 4vw;"></td>
-                  <td></td>
-                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_pasd.jpg"
-                      style="width: 14vw;"></td>
-                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_seesr.jpg"
-                      style="width: 14vw;"></td>
-                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_0_supir.jpg"
-                      style="width: 14vw;"></td>
-                  <td class="results-tabsecond"><img src="figures/realsr/EVAL_7ac1cc63318ac60c_ours.jpg"
                       style="width: 14vw;"></td>
                 </tr>
                 <tr>
